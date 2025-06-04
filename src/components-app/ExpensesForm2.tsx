@@ -1,5 +1,5 @@
 import { categories } from "@/App";
-import { Box, Button, Heading, Input, Portal, Select } from "@chakra-ui/react";
+import { Box, Button, Input, Portal, Select } from "@chakra-ui/react";
 import { useState } from "react";
 import type { Expense } from "./Expense";
 
