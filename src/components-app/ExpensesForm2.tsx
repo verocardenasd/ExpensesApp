@@ -38,10 +38,7 @@ const ExpensesForm2 = ({ onSubmit }: Props) => {
 
   return (
     <>
-      <Box mb="2">
-        <Heading mb="4" size="2xl">
-          Expenses Form
-        </Heading>
+      <Box mb="2" bg="white" p="4" borderRadius="lg" boxShadow="sm">
         <form action="" onSubmit={handleSubmit}>
           <Box mb="4">
             <label htmlFor="description">Description:</label>
@@ -103,10 +100,15 @@ const ExpensesForm2 = ({ onSubmit }: Props) => {
           </Box>
           <Button
             marginBottom="4"
-            colorPalette="blue"
+            colorScheme="purple"
+            w="full"
             variant="outline"
             borderColor="blue.700"
             type="submit"
+            color={"purple.700"}
+            _hover={{ bg: "purple.100" }}
+            _active={{ bg: "purple.200" }}
+            _focus={{ boxShadow: "0 0 0 3px rgba(76, 66, 225, 0.6)" }}
           >
             Add Expense
           </Button>

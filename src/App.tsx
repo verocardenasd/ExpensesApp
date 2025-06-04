@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./App.css";
-import { Box, createListCollection, Heading } from "@chakra-ui/react";
+import { Box, createListCollection, Heading, VStack } from "@chakra-ui/react";
 import ExpensesList2 from "./components-app/ExpensesList2";
 import ExpensesFilter2 from "./components-app/ExpensesFilter2";
 import ExpensesForm2 from "./components-app/ExpensesForm2";
@@ -48,27 +48,39 @@ function App() {
 
   return (
     <>
-      <Box mb="2">
-        <ExpensesForm2
-          onSubmit={(data) => {
-            setExpenses([data, ...expenses]);
-            setSelectedCategory("All");
-          }}
-        />
-      </Box>
-      <Box mb="4">
-        <ExpensesFilter2
-          onSelectCategory={(category) => setSelectedCategory(category)}
-        />
-      </Box>
-      <Box mb="4">
-        <Heading mt="5" mb="2" size="lg">
-          Expenses List
-        </Heading>
-        <ExpensesList2
-          expenses={visibleExpenses}
-          onDelete={(id) => setExpenses(expenses.filter((e) => e.id !== id))}
-        />
+      <Box
+        maxW="600px"
+        mx="auto"
+        mt={10}
+        p={6}
+        bg="gray.50"
+        borderRadius="xl"
+        boxShadow="lg"
+      >
+        <VStack borderSpacing={6} align="stretch">
+          <Heading textAlign="center" color="purple.800" size="2xl" mb="4">
+            ExpensesApp
+          </Heading>
+          <Heading mb="4" size="lg" color="purple.600">
+            Expenses Form
+          </Heading>
+          <ExpensesForm2
+            onSubmit={(data) => {
+              setExpenses([data, ...expenses]);
+              setSelectedCategory("All");
+            }}
+          />
+          <ExpensesFilter2
+            onSelectCategory={(category) => setSelectedCategory(category)}
+          />
+          <Heading mt="5" mb="2" size="lg" color="purple.600">
+            Expenses List
+          </Heading>
+          <ExpensesList2
+            expenses={visibleExpenses}
+            onDelete={(id) => setExpenses(expenses.filter((e) => e.id !== id))}
+          />
+        </VStack>
       </Box>
     </>
   );

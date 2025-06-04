@@ -13,6 +13,7 @@
 
 - React
 - TypeScript
+- Chakra ui
 - Vite
 - CSS Modules / Plain CSS
 
